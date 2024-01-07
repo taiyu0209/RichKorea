@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/score.css}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/271dc1263e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캡스톤2</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><p>cloud <span>bread</span></p></div>
+        <div class="home">
+            <a href="/main"><i class="fa-solid fa-house fa-2x"></i></a>
+        </div>
+    </header>
+    <main>
+        <a class="mascot_box" th:href="@{/plus/{areaa}(areaa=${area})}">
+            <img class="mascot" th:src="@{/mascot_img/{areaa}.svg(areaa=${area})}"/>
+        </a>
+        <div th:text="${areaName}" class="text">area</div>
+        <div th:text="${score}" class="score">score</div>
+    </main>
+</body>
+</html>
