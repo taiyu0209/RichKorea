@@ -4,12 +4,9 @@ import gbsw.cb.RichKorea.entity.Pop;
 import gbsw.cb.RichKorea.repository.PopRepository;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class RichKoreaService {
@@ -23,7 +20,7 @@ public class RichKoreaService {
     public void plusPopCookie(Cookie cookie, HttpServletResponse response) {
         Integer popCookieValue = null;
         popCookieValue = Integer.parseInt(cookie.getValue());
-        cookie.setValue(null);u
+        cookie.setValue(null);
         cookie.setValue(String.valueOf(popCookieValue + 1));
         cookie.setPath("/");
         response.addCookie(cookie);
