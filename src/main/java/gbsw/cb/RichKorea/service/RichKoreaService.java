@@ -5,6 +5,7 @@ import gbsw.cb.RichKorea.repository.PopRepository;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -38,10 +39,9 @@ public class RichKoreaService {
 
 
     public List<Pop> RankList() {
-
         return popRepository.findAllByOrderByHitDesc();
     }
-
+    @Transactional
     public void plusPopData(String area) {
         Pop pop = popRepository.findById(area).get();
 //        System.out.println(pop);
